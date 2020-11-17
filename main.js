@@ -14,7 +14,7 @@ var createScene = function() {
 
     // This creates and positions a free camera (non-mesh)
     var camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -1), scene);
-    var camera2 = new BABYLON.VRDeviceOrientationFreeCamera("camera2", new BABYLON.Vector3(0, 5, -1), scene);
+    var camera2 = new BABYLON.WebVRFreeCamera("camera2", new BABYLON.Vector3(0, 5, -1), scene);
     
     camera.inputs.addGamepad();
 
@@ -157,6 +157,7 @@ var createScene = function() {
     return scene;
 };
 
+/*
 function onClick() 
 {
     if (typeof DeviceMotionEvent.requestPermission === 'function') 
@@ -170,7 +171,7 @@ function onClick()
         })
         .catch(console.error);
        }
-}
+}   */
 
 var engine;
 try {
