@@ -156,6 +156,22 @@ var createScene = function() {
     
     return scene;
 };
+
+function onClick() 
+{
+    if (typeof DeviceMotionEvent.requestPermission === 'function') 
+    {
+        DeviceMotionEvent.requestPermission()
+        .then(permissionState => {
+            if (permissionState === 'granted') 
+            {
+                // DeviceMotionEvent.requestPermission() has been granted
+            }
+        })
+        .catch(console.error);
+       }
+}
+
 var engine;
 try {
     engine = createDefaultEngine();
